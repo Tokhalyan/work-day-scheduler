@@ -15,12 +15,10 @@ $(".saveBtn").on("click", function () {
 function timeTracker() {
     //get current time - hour.
     let timeNow = parseInt(moment().format("h"));
-    console.log(timeNow)
 
     // loop over time blocks
     $(".time-block").each(function () {
         let blockTime = parseInt($(this).attr("id").split("hour")[1]);
-        console.log(blockTime)
     
         if (blockTime < timeNow) {
             $(this).addClass("past");
