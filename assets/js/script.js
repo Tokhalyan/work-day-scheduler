@@ -20,21 +20,22 @@ function timeTracker() {
     // loop over time blocks
     $(".time-block").each(function () {
         let blockTime = parseInt($(this).attr("id").split("hour")[1]);
+        console.log(blockTime)
     
         if (blockTime < timeNow) {
-            $(".description").addClass("past");
-            $(".description").removeClass("present");
-            $(".description").removeClass("future");
+            $(this).addClass("past");
+            $(this).removeClass("present");
+            $(this).removeClass("future");
         } 
         else if (blockTime === timeNow) {
-            $(".description").removeClass("past");
-            $(".description").addClass("present");
-            $(".description").removeClass("future");
+            $(this).removeClass("past");
+            $(this).addClass("present");
+            $(this).removeClass("future");
         } 
         else {
-            $(".description").removeClass("past");
-            $(".description").removeClass("present");
-            $(".description").addClass("future");
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
         }
     }) 
 
